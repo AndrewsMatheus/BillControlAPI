@@ -4,11 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @Entity
@@ -18,14 +20,14 @@ import java.text.DateFormat;
 public class Bill {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id;
 
     @Column
     private String description;
 
-    @Column(nullable = false)
-    private DateFormat dueDate;
+    private String dueDate;
 
     @Column
-    private float value;
+    private Double value;
 }

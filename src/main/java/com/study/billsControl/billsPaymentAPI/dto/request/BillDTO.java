@@ -1,19 +1,27 @@
 package com.study.billsControl.billsPaymentAPI.dto.request;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.*;
 
+
+@Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class BillDTO {
 
-    @NotEmpty
     private int id;
 
-    @NotEmpty
+    @NotNull
+    @Size(min = 1, max = 200)
     private String description;
 
+    @NotNull
     private String dueDate;
 
-    @NotEmpty
-    private float value;
+    @NotNull
+    private Double value;
 }
