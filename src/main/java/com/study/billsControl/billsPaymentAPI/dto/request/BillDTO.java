@@ -1,5 +1,4 @@
 package com.study.billsControl.billsPaymentAPI.dto.request;
-import java.util.Date;
 import lombok.Builder;
 
 import javax.validation.constraints.NotEmpty;
@@ -13,8 +12,7 @@ public class BillDTO {
     @NotEmpty
     private String description;
 
-    @NotEmpty
-    private Date date;
+    private String dueDate;
 
     @NotEmpty
     private float value;
