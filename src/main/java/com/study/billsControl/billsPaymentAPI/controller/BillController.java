@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/bills")
+@CrossOrigin(origins = "http://localhost:4200")
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class BillController {
 
